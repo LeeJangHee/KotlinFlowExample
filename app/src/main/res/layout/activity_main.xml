@@ -65,6 +65,23 @@
         android:layout_height="wrap_content"
         android:text="SharedFlow" />
 
+    <Button
+        android:id="@+id/btnFlowActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="next_flow_activity" />
+
+    <Button
+        android:id="@+id/btnStateFlowActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="next_state_flow_activity" />
+
+    <Button
+        android:id="@+id/btnSharedFlowActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="next_shared_flow_activity" />
 
 
 </LinearLayout>

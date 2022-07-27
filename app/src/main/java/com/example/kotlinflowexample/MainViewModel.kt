@@ -1,9 +1,6 @@
 package com.example.kotlinflowexample
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -16,7 +13,7 @@ class MainViewModel : ViewModel() {
     private var _stateFlow = MutableStateFlow("Hello World!")
     val stateFlow get() = _stateFlow.asStateFlow()
 
-    private var _sharedFlow = MutableSharedFlow<String>()
+    private var _sharedFlow = MutableSharedFlow<String>(extraBufferCapacity = 1)
     val sharedFlow get() = _sharedFlow.asSharedFlow()
 
     fun triggerLiveData() {

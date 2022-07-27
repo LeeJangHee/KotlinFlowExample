@@ -1,10 +1,14 @@
 package com.example.kotlinflowexample
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.kotlinflowexample.databinding.ActivityMainBinding
+import com.example.kotlinflowexample.flow.FlowActivity
+import com.example.kotlinflowexample.shared_flow.SharedFlowActivity
+import com.example.kotlinflowexample.state_flow.StateFlowActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -41,6 +45,21 @@ class MainActivity : AppCompatActivity() {
         }
 
         subscribeToObservables()
+
+
+        binding.apply {
+            btnFlowActivity.setOnClickListener {
+                nextActivity(FlowActivity::class.java)
+            }
+
+            btnStateFlowActivity.setOnClickListener {
+                nextActivity(StateFlowActivity::class.java)
+            }
+
+            btnSharedFlowActivity.setOnClickListener {
+                nextActivity(SharedFlowActivity::class.java)
+            }
+        }
     }
 
     private fun subscribeToObservables() {
@@ -72,5 +91,9 @@ class MainActivity : AppCompatActivity() {
                     .show()
             }
         }
+    }
+
+    private fun nextActivity(clazz: Class<*>) {
+        startActivity(Intent(this@MainActivity, clazz))
     }
 }

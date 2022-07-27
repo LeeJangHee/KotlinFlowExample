@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".state_flow.StateFlowActivity">
+
+    <TextView
+        android:id="@+id/tvStateFlowA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView1"
+        app:layout_constraintBottom_toTopOf="@+id/tvStateFlowB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvStateFlowB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView2"
+        app:layout_constraintBottom_toTopOf="@+id/tvStateFlowC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStateFlowA" />
+
+    <TextView
+        android:id="@+id/tvStateFlowC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView3"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStateFlowB" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStateFlowC">
+
+        <Button
+            android:id="@+id/btnStateFlow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StateFlow1" />
+
+        <Button
+            android:id="@+id/btnStateFlow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StateFlow2" />
+
+        <Button
+            android:id="@+id/btnStateFlow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StateFlow3" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
